@@ -2,7 +2,18 @@
 <resources>
     <string name="navigation_open">Open Navigaton drawer</string>
     <string name="navigation_close">Close Navigaton drawer</string>
-
+    <string name="prompt_username">UserName</string>
+    <string name="prompt_roomid">RoomID</string>
+    <string name="login_video">Video Call</string>
+    <string name="login_audio">Audio Call</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="sign_in">
+        <u>Sign In</u>.
+    </string>
 
     <string name="app_name">MyAndroidApp</string>
     <string name="profession_prompt">Choose a Profession</string>
@@ -39,8 +50,29 @@
         <item>Sanyasa, Rs 14/-</item>
         <item>Antyeshti (Last rite), Rs 15/-</item>
     </string-array>
-    \
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Strings declared by JAYESH SHINDE-->
+    <string name="name">आदि शक्ति एस्ट्रो</string>
+    <string name="aadi_shakti_astro">Aadi shakti astro</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="rate_per_minute">Rate per minute <b>(In INR)</b></string>
+    <string name="expr">Experience <b>(In Years)</b></string>
+    <string name="pro_cer">Attach Self Attested <b>Professional Certificate(s)</b></string>
+    <string name="aadhar_card">Attach Self Attested <b>AADHAR Card <font color='#DC128A'>(Masked)</font></b> </string>
+    <string name="pan_card">Attach Self Attested <b>Pan Card</b> </string>
+    <string name="already_have_an_account">Already have an account? <font color='#01C6DB'><b>Sign in</b></font></string>
+    <string name="you_have_new_request_pending">You Have<font color='#01C6DB'> New Request Pending</font></string>
+    <string name="dear_expert">Dear Expert,</string>
+    <string name="SelectOne">Please choose your puja drom below</string>
+    <string name="total_amount_to_be_paid_textview">Total amount to be paid: <font color='#DC128A'>TextView</font></string>
+    <string name="rate_min_rs_30">Rate/Min:<font color='#DC128A'> Rs.30</font></string>
+    <string name="prime_services_astrologer">Prime Services: <font color='#DC128A'> Astrologer</font></string>
+    <string name="enter_venue">Enter Venue</string>
+    <string name="are_you_new_expert_sign_up">Are you new Expert? <font color='#01C6DB'>Sign Up</font></string>
+    <string name="already_have_an_account_sign_in">Already have an account?<font color='#01C6DB'> Sign In</font></string>
 
 </resources>

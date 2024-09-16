@@ -1,184 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:orientation="vertical"
-    android:background="@drawable/bgg"
     tools:context=".Activities.ExpertProfile">
-
-
-    <TextView
-
+    <!--appbar-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center"
+            android:background="#4DBFF0"
+            android:gravity="center"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_left" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="EXPERT PROFILE"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:titleMarginStart="10dp"
+                app:titleTextColor="@color/white" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView10"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/open_sans_bold"
-        android:gravity="center"
-        android:text="────────────────────────────"
+        app:cardCornerRadius="100dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar1">
 
-        android:textColor="#4DBFF0"
+        <ImageView
+            android:id="@+id/experttitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@drawable/profilee" />
+    </androidx.cardview.widget.CardView>
 
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/experttitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginBottom="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginRight="3dp"
-        android:layout_marginLeft="3dp"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:text="Expert Profile" />
-
-    <TextView
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="200dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/open_sans_bold"
-        android:gravity="center"
-        android:text="────────────────────────────"
-
-        android:textColor="#4DBFF0"
-
-        android:textSize="18sp" />
-
-
+    <!--Name-->
     <TextView
         android:id="@+id/exprname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_rounded"
+        android:padding="6dp"
+        android:text="Name: "
+        android:textColor="@color/cardview_dark_background"
         android:textSize="20sp"
-        android:padding="3dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginBottom="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:background="@drawable/textbox1"
-        android:text="Name" />
-
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView10" />
+    <!--DOB-->
     <TextView
         android:id="@+id/exprdob"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_rounded"
+        android:padding="6dp"
+        android:text="DOB: "
+        android:textColor="@color/cardview_dark_background"
         android:textSize="20sp"
-        android:padding="3dp"
-        android:textStyle="bold"
-        android:layout_marginBottom="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:background="@drawable/textbox2"
-        android:text="Dob"
-        android:textColor="@color/black"/>
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/exprname"
+        app:layout_constraintStart_toStartOf="@+id/exprname"
+        app:layout_constraintTop_toBottomOf="@+id/exprname" />
 
+    <!--Email-->
     <TextView
         android:id="@+id/expremail"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_rounded"
+        android:padding="6dp"
+        android:text="Email Id: "
+        android:textColor="@color/cardview_dark_background"
         android:textSize="20sp"
-        android:padding="3dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginBottom="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:background="@drawable/textbox1"
-        android:text="Email" />
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/exprdob"
+        app:layout_constraintStart_toStartOf="@+id/exprdob"
+        app:layout_constraintTop_toBottomOf="@+id/exprdob" />
 
+    <!--Address-->
     <TextView
         android:id="@+id/expraddress"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/textbox2"
-        android:text="Address"
-        android:padding="3dp"
-        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_rounded"
+        android:padding="6dp"
+        android:text="Address: "
+        android:textColor="@color/cardview_dark_background"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/expremail"
+        app:layout_constraintStart_toStartOf="@+id/expremail"
+        app:layout_constraintTop_toBottomOf="@+id/expremail" />
 
+    <!--Pincode-->
     <TextView
         android:id="@+id/exprpincode"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/textbox1"
-        android:text="Postal Address"
-        android:padding="3dp"
-        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_rounded"
+        android:padding="6dp"
+        android:text="Pincode: "
+        android:textColor="@color/cardview_dark_background"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/expraddress"
+        app:layout_constraintStart_toStartOf="@+id/expraddress"
+        app:layout_constraintTop_toBottomOf="@+id/expraddress" />
 
+    <!--Experties-->
     <TextView
         android:id="@+id/exprexperty"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/textbox2"
-        android:text="Expertise"
-        android:textColor="@color/black"
-        android:padding="3dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_rounded"
+        android:padding="6dp"
+        android:text="Expertise: "
+        android:textColor="@color/cardview_dark_background"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/exprpincode"
+        app:layout_constraintStart_toStartOf="@+id/exprpincode"
+        app:layout_constraintTop_toBottomOf="@+id/exprpincode" />
 
+    <!--Experience-->
     <TextView
         android:id="@+id/exprexperience"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/textbox1"
-        android:text="Experience"
-        android:textColor="@color/black"
-        android:padding="3dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_rounded"
+        android:padding="6dp"
+        android:text="Experience: "
+        android:textColor="@color/cardview_dark_background"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/exprexperty"
+        app:layout_constraintStart_toStartOf="@+id/exprexperty"
+        app:layout_constraintTop_toBottomOf="@+id/exprexperty" />
 
+    <!--Charge-->
     <TextView
         android:id="@+id/expramt"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/textbox2"
-        android:text="Amount to be paid"
-        android:padding="3dp"
-        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_rounded"
+        android:padding="6dp"
+        android:text="Charges/min: "
+        android:textColor="@color/cardview_dark_background"
         android:textSize="20sp"
-        android:textStyle="bold" />
-
-
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/exprexperience"
+        app:layout_constraintStart_toStartOf="@+id/exprexperience"
+        app:layout_constraintTop_toBottomOf="@+id/exprexperience" />
 
     <Spinner
         android:id="@+id/expryesno"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_rounded"
+        android:minHeight="48dp"
         android:textColor="@color/black"
-        android:layout_marginLeft="10dp"
-        android:background="@drawable/textbox1"
-        android:minHeight="48dp" />
+        app:layout_constraintEnd_toEndOf="@+id/expramt"
+        app:layout_constraintStart_toStartOf="@+id/expramt"
+        app:layout_constraintTop_toBottomOf="@+id/expramt" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

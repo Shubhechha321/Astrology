@@ -1,453 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-
-    android:background="@drawable/finalbackground"
-
+    android:layout_height="match_parent"
     tools:context=".Activities.bookingPage">
 
-    <RelativeLayout
+
+    <!--Toolbar-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
         android:layout_width="match_parent"
-        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:background="@color/sky_blue"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        android:layout_height="match_parent">
-
-    <LinearLayout
-        android:id="@+id/cly1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:orientation="vertical"
-        android:padding="5dp"
-        android:visibility="visible">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/hindiname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/open_sans_bold"
-                    android:gravity="center"
-                    android:text="आदि शक्ति एस्ट्रो"
-                    android:textColor="#D100D1"
-
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/englishname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-
-                    android:fontFamily="@font/open_sans_bold"
-                    android:gravity="center"
-                    android:text="AADI SHAKTII ASTRO"
-                    android:textColor="#D100D1"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/title12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/open_sans_bold"
-                    android:gravity="center"
-                    android:text="────────────────────────────"
-
-                    android:textColor="#D100D1"
-
-                    android:textSize="18sp"
-                    />
-
-
-
-
-
-
-            </LinearLayout>
-
-
-            <ImageView
-                android:id="@+id/topicon"
-                android:layout_width="58dp"
-                android:layout_height="60dp"
-                android:layout_alignParentLeft="true"
-                android:layout_gravity="center"
-
-
-                android:src="@drawable/mainlogo" />
-        </RelativeLayout>
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-
-
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/ic_baseline_people_24"
-                android:padding="10dp"
-                android:layout_margin="10dp"
-            android:layout_gravity="center"></ImageView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:orientation="vertical">
-        <TextView
-            android:id="@+id/NAmeofExpert"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/textviewbg"
-
-            android:backgroundTint="#F6F7FA"
-            android:hint="Name:"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textSize="16dp"
-            android:textStyle="bold"
-
-            />
-
+        <ImageView
+            android:id="@+id/topicon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:src="@drawable/mainlogo" />
 
         <TextView
-            android:id="@+id/experiencebig"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/textviewbg"
-            android:backgroundTint="#F6F7FA"
-            android:hint="Experience"
-            android:padding="10dp"
-
-            android:textColor="@color/black"
-            android:textSize="16dp"
-
-            tools:layout_editor_absoluteX="126dp"
-            tools:layout_editor_absoluteY="68dp" />
-
-
-        <TextView
-            android:id="@+id/aboutme"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/textviewbg"
-            android:backgroundTint="#F6F7FA"
-            android:hint="About me"
-
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textSize="16dp"
-
-            tools:layout_editor_absoluteX="126dp"
-            tools:layout_editor_absoluteY="68dp" />
-
-        <TextView
-            android:id="@+id/allselections"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/textviewbg"
-            android:backgroundTint="#F6F7FA"
-
-            android:hint="Selections"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textSize="16dp"
-            tools:layout_editor_absoluteX="126dp"
-            tools:layout_editor_absoluteY="97dp" />
-
-
-        <TextView
-            android:id="@+id/ratepmin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/textviewbg"
-            android:backgroundTint="#F6F7FA"
-            android:hint="Rate"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textSize="16dp"
-
-            />
-
-            </LinearLayout>
-
-    </LinearLayout>
-
-
-
-
-        <TextView
-            android:id="@+id/pick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/box"
-            android:backgroundTint="#DEFEFE"
-
-            android:fontFamily="@font/open_sans"
-            android:gravity="center"
-            android:text="  🕒 Please Pick Duration 🕒  "
-            android:textColor="@color/black"
-            android:textSize="17sp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_weight="3"
+            android:text="@string/aadi_shakti_astro"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@color/white"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-
-            <Button
-                android:id="@+id/pickduratiion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/box"
-                android:fontFamily="@font/open_sans_bold"
-                android:singleLine="true"
-                android:text="Duration ⏱"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                app:backgroundTint="#4DBFF0"
-                tools:layout_editor_absoluteX="160dp"
-                tools:layout_editor_absoluteY="553dp" />
-
-            <EditText
-                android:id="@+id/duraOfBook"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/textviewbg"
-                android:backgroundTint="#F6F7FA"
-                android:ems="8"
-                android:hint="Duration "
-                android:inputType="textPersonName"
-                android:padding="10dp"
-                android:textColor="#4F3DEF"
-
-                android:textSize="16dp" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/title122"
-            android:layout_width="match_parent"
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="2dp"
-            android:fontFamily="@font/open_sans_bold"
-            android:gravity="center"
-            android:text="────────────────────────────"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="5dp">
 
-            android:textColor="#4DBFF0"
+            <ImageButton
+                android:id="@+id/openProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_baseline_people_24" />
+        </androidx.cardview.widget.CardView>
 
-            android:textSize="18sp"
-            />
+    </androidx.appcompat.widget.Toolbar>
 
+    <!--2nd toolbar-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardElevation="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarMain"
+        tools:layout_editor_absoluteX="10dp">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="2dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingRight="10dp"
-                android:layout_gravity="center"
-                android:fontFamily="@font/open_sans_bold"
-                android:text="Total amount to be Paid:"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                />
-
-            <TextView
-                android:id="@+id/totalAmountToBePaid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="TextView"
-                android:textColor="#4F3DEF"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
-    android:orientation="horizontal">
-        <Button
-            android:id="@+id/request"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="40dp"
-
-            android:layout_marginEnd="40dp"
-            android:background="@drawable/box"
-            app:backgroundTint="#4DBFF0"
-
-            android:fontFamily="@font/open_sans_bold"
-            android:text="Book Now"
-            android:textAllCaps="false"
-            android:textSize="16dp"
-
-            android:textStyle="bold"
-
-            tools:layout_editor_absoluteX="160dp"
-            tools:layout_editor_absoluteY="553dp" />
-
-
-
-
-</LinearLayout>
-    </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/cly2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:visibility="invisible">
+            android:layout_marginVertical="10dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="20dp"
-                app:srcCompat="@drawable/cong" />
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:src="@drawable/profilee"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/showstatus"
-                android:layout_width="wrap_content"
+                android:id="@+id/NAmeofExpert"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:fontFamily="@font/open_sans_bold"
+                android:backgroundTint="#F6F7FA"
                 android:gravity="center"
-                android:padding="5dp"
-                android:text="Show status"
+                android:text="Swathi"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/imageView3"
+                app:layout_constraintStart_toStartOf="@+id/imageView3"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
-                android:textColor="#4F3DEF"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/pay"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/box"
-                android:fontFamily="@font/aclonica"
-                android:padding="5dp"
-                android:text="Pay To Proceed"
-                android:visibility="visible"
-                app:backgroundTint="#4DBFF0"
-                tools:layout_editor_absoluteX="161dp"
-                tools:layout_editor_absoluteY="393dp" />
-
-            <Button
-                android:id="@+id/newBooking"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/box"
-                android:fontFamily="@font/aclonica"
-                android:padding="5dp"
-                android:text="Please Book Again"
-                android:visibility="invisible"
-                app:backgroundTint="#4DBFF0" />
+                android:gravity="center"
+                android:text="About Expert"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/aboutme"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
+                android:id="@+id/aboutme"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="60dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/poppins_light"
-                android:text="Phone Number"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.and typesetting industry. Lorem Ipsum has been the industry's standard. "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/experiencebig"
+                app:layout_constraintTop_toBottomOf="@+id/textView36" />
 
-
-                android:textColor="#4F3DEF"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-
-            <Button
-                android:id="@+id/chat"
-
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/experiencebig"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="60dp"
-                android:background="@drawable/box"
-                android:fontFamily="@font/aclonica"
-                android:singleLine="true"
-                android:text="Chat With Your Expert: 👉"
-
-                android:textAllCaps="false"
-                android:textSize="15dp"
+                android:gravity="center"
+                android:text="Experience : 2 years"
+                android:textColor="@color/black"
+                android:textSize="12sp"
                 android:textStyle="bold"
-                app:backgroundTint="#4DBFF0" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/NAmeofExpert" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/allselections"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/book_now_item_back"
+        android:gravity="center"
+        android:paddingVertical="15dp"
+        android:text="@string/prime_services_astrologer"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/ratepmin"
+        app:layout_constraintStart_toStartOf="@+id/cardView11"
+        app:layout_constraintTop_toBottomOf="@+id/cardView11" />
 
 
-        </LinearLayout>
+    <TextView
+        android:id="@+id/ratepmin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/book_now_item_back"
+        android:gravity="center"
+        android:paddingVertical="15dp"
+        android:text="@string/rate_min_rs_30"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/allselections"
+        app:layout_constraintEnd_toEndOf="@+id/cardView11"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/allselections"
+        app:layout_constraintTop_toTopOf="@+id/allselections" />
 
-    </RelativeLayout>
 
-</ScrollView>
+    <Button
+        android:id="@+id/pickduratiion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/box"
+        android:singleLine="true"
+        android:text="Time Slot(In Minutes)"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:backgroundTint="#4DBFF0"
+        app:layout_constraintEnd_toStartOf="@+id/duraOfBook"
+        app:layout_constraintStart_toStartOf="@+id/allselections"
+        app:layout_constraintTop_toBottomOf="@+id/allselections" />
+
+
+    <EditText
+        android:id="@+id/duraOfBook"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/book_now_item_back"
+        android:ems="8"
+        android:hint="Duration "
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:textColor="#4F3DEF"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/pickduratiion"
+        app:layout_constraintEnd_toEndOf="@+id/ratepmin"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/pickduratiion"
+        app:layout_constraintTop_toTopOf="@+id/pickduratiion" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Total amount to be Paid:"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/totalAmountToBePaid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/total_amount_to_be_paid_textview"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/pickduratiion"
+        app:layout_constraintTop_toBottomOf="@+id/pickduratiion" />
+
+
+    <Button
+        android:id="@+id/request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/box"
+        android:paddingHorizontal="50dp"
+        android:text="Book Now"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:backgroundTint="#4DBFF0"
+        app:layout_constraintEnd_toEndOf="@+id/totalAmountToBePaid"
+        app:layout_constraintStart_toStartOf="@+id/totalAmountToBePaid"
+        app:layout_constraintTop_toBottomOf="@+id/totalAmountToBePaid" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

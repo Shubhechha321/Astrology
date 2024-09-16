@@ -2,11 +2,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.astrology">
-
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+
 
     <application
         android:allowBackup="true"
@@ -16,22 +29,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Astrology">
         <activity
-            android:name=".expertdetails"
+            android:name=".Activities.expertdetails"
             android:exported="false" />
         <activity
-            android:name=".legalPolicy"
+            android:name=".Activities.legalPolicy"
             android:exported="false" />
         <activity
-            android:name=".hinduritualsbookingpage"
+            android:name=".Activities.hinduritualsbookingpage"
             android:exported="false" />
         <activity
-            android:name=".vastuExpertBookingPage"
+            android:name=".Activities.vastuExpertBookingPage"
             android:exported="false" />
         <activity
             android:name=".chatRight"
             android:exported="false" />
         <activity
-            android:name=".homescreenexpertdetails"
+            android:name=".login.AudioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:exported="true"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".login.VideoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Activities.homescreenexpertdetails"
             android:exported="false" />
         <activity
             android:name=".Activities.ExpertProfile"
@@ -59,6 +84,17 @@
             android:name=".loginSignupSeRelated.ExpertSignUp3"
             android:exported="true" />
         <activity
+            android:name=".Activities.aboutus"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.faqs"
+            android:exported="true" />
+
+        <activity
+            android:name=".Activities.aboutteam"
+            android:exported="true"
+           />
+        <activity
             android:name=".loginSignupSeRelated.ExpertSignUp2"
             android:exported="true" />
         <activity
@@ -70,6 +106,8 @@
         <activity
             android:name=".Activities.astrologer"
             android:exported="true" />
+
+
         <activity
             android:name=".loginSignupSeRelated.Login"
             android:exported="true" />

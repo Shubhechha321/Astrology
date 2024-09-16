@@ -52,11 +52,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class bookingPage extends AppCompatActivity implements View.OnClickListener {
-    String expertid,selection,r,email,userid,nameofuser,date,time,phone,exabtyrslf;
-    DatabaseReference dbr,requestdb;
+    String expertid,selection,r,email,userid,nameofuser,date,time,phone,exabtyrslf,userphone;
+    DatabaseReference dbr,requestdb,userdb;
+    //rmp matlab rate per min, exabtyrslftxtvw matlab expert about yourself text view
     TextView name,exp,rpm,expertise,duration,totalAmountToBePaid,showstatus,exabtyrslftxtvw;
     Button pickDuration,request;
-    LinearLayout cly1,cly2;
     ImageView show;
 
     APIService apiService;
@@ -87,7 +87,6 @@ exabtyrslftxtvw = findViewById(R.id.aboutme);
 
         pickDuration = findViewById(R.id.pickduratiion);
         request = findViewById(R.id.request);
-        cly1 = findViewById(R.id.cly1);
 
 
 
@@ -103,9 +102,11 @@ exabtyrslftxtvw = findViewById(R.id.aboutme);
         userid =  user.getUid().toString();
         dbr = FirebaseDatabase.getInstance().getReference().child("Experts").child(selection).child(expertid);
         requestdb = FirebaseDatabase.getInstance().getReference().child("request").child(expertid).child(userid);
+        userdb = FirebaseDatabase.getInstance().getReference().child("users").child(userid);
 
 
 
+//fetching details of expert and displaying it to the user
         dbr.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -127,73 +128,25 @@ exabtyrslftxtvw = findViewById(R.id.aboutme);
             public void onCancelled(@NonNull DatabaseError error) {
             }});
 
+userdb.addValueEventListener(new ValueEventListener() {
+    @Override
+    public void onDataChange(@NonNull DataSnapshot snapshot) {
+userphone = snapshot.child("mobile").getValue().toString();
+    }
 
-       /* request.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void onClick(View view) {
-                notify = true;
-            HashMap hashMap = new HashMap();
-            hashMap.put("name",nameofuser);
-            hashMap.put("email",email);
-            hashMap.put("phone",phone);
-            hashMap.put("bookedYouFor",selection);
-            hashMap.put("durationInMin",String.valueOf(totalmin));
-            hashMap.put("DateOfBooking",date);
-            hashMap.put("timeOfBooking",time);
-            hashMap.put("totalAmount",rs);
-            hashMap.put("status","pending");
-            hashMap.put("paymentStatus","pending");
+    @Override
+    public void onCancelled(@NonNull DatabaseError error) {
 
+    }
+});
 
-                //DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-              //  LocalDateTime now = LocalDateTime.now();
-              //  System.out.println(dtf.format(now));
-
-                requestdb.updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {
-                    @Override
-                    public void onComplete(@NonNull Task task) {
-                       if(task.isSuccessful())
-
-                       {
-                           Toast.makeText(bookingPage.this, "request sent sucesfully kindly wait for acceptance", Toast.LENGTH_SHORT).show();
-                           request.setVisibility(View.GONE);
-
-
-                       }
-                    }
-                });
-
-                requestdb = FirebaseDatabase.getInstance().getReference("users").child(user.getUid());
-                requestdb.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        userModel user = dataSnapshot.getValue(userModel.class);
-                        if (notify) {
-                            sendNotifiaction(expertid, user.getName(), "new request ");
-                        }
-                        notify = false;
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
-
-
-
-
-            }
-        });*/
-
+//redirects to payment gateway
         request.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Checkout checkout = new Checkout();
+               Checkout checkout = new Checkout();
                 checkout.setKeyID("rzp_test_rfooZLYQbv7p5h");
-                checkout.setImage(R.drawable.mainlogo);
+                checkout.setImage(R.drawable.rzp_logo);
                 JSONObject object = new JSONObject();
                 try {
                     object.put("name","Aadishakti");
@@ -201,7 +154,7 @@ exabtyrslftxtvw = findViewById(R.id.aboutme);
                     object.put("theme.color","#0093DD");
                     object.put("currency","INR");
                     object.put("amount",rs*100);
-                    object.put("prefill.contact","9711445734");
+                    object.put("prefill.contact",userphone);
                     object.put("prefill.email",email);
                     checkout.open(bookingPage.this,object);
 
@@ -209,6 +162,7 @@ exabtyrslftxtvw = findViewById(R.id.aboutme);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
 
             }
         });
@@ -258,9 +212,10 @@ exabtyrslftxtvw = findViewById(R.id.aboutme);
         });
 
     }
-
+//payment success pe ye hoga aur request db mai jayegi aur expert ke pass bhi
 
     public void onPaymentSuccess(String s) {
+
         notify = true;
         HashMap hashMap = new HashMap();
         hashMap.put("name",nameofuser);
@@ -281,7 +236,11 @@ exabtyrslftxtvw = findViewById(R.id.aboutme);
 
                 {
                     Intent intent = new Intent(bookingPage.this,chatActivity.class);
-                    intent.putExtra("userid",user.getUid());
+                    intent.putExtra("senderId",userid);
+                   // intent.putExtra("userid",userid);
+                    intent.putExtra("recieverId",expertid);
+
+
                     intent.putExtra("expertid",expertid);
                     intent.putExtra("name",nameofuser);
                     intent.putExtra("Duration of Timer",String.valueOf(totalmin));
@@ -318,57 +277,11 @@ exabtyrslftxtvw = findViewById(R.id.aboutme);
 
     }
     public void onPaymentError(int i, String s) {
-        notify = true;
-        HashMap hashMap = new HashMap();
-        hashMap.put("name",nameofuser);
-        hashMap.put("email",email);
-        hashMap.put("phone",phone);
-        hashMap.put("bookedYouFor",selection);
-        hashMap.put("durationInMin",String.valueOf(totalmin));
-        hashMap.put("DateOfBooking",date);
-        hashMap.put("timeOfBooking",time);
-        hashMap.put("totalAmount",rs);
-        hashMap.put("status","pending");
-        hashMap.put("paymentStatus","completed");
-
-        requestdb.updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {
-            @Override
-            public void onComplete(@NonNull Task task) {
-                if(task.isSuccessful())
-
-                {
-                    Intent intent = new Intent(bookingPage.this,chatActivity.class);
-                    intent.putExtra("userid",user.getUid());
-                    intent.putExtra("expertid",expertid);
-                    intent.putExtra("name",nameofuser);
-                    intent.putExtra("Duration of Timer",String.valueOf(totalmin));
-
-                    startActivity(intent);
-
-                }
-            }
-        });
-
-        requestdb = FirebaseDatabase.getInstance().getReference("users").child(user.getUid());
-        requestdb.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                userModel user = dataSnapshot.getValue(userModel.class);
-                if (notify) {
-                    sendNotifiaction(expertid, user.getName(), "new request ");
-                }
-                notify = false;
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
     }
 
 
-
+//duration picker dialogue hai
     @Override
     public void onClick(View v) {
 
@@ -393,9 +306,10 @@ exabtyrslftxtvw = findViewById(R.id.aboutme);
             picker.show();
         }
         }
+        //amount calculate karne ke liye
 
     private void getamounttobepaid(int sHour, int sMinute) {
-        int hrintomin =0;
+         int hrintomin =0;
          hrintomin = sHour*60;
          totalmin = hrintomin + sMinute;
          rs =  Integer.valueOf(r)*10 * totalmin;

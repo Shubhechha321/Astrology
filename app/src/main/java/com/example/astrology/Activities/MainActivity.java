@@ -10,27 +10,19 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import static com.example.astrology.R.menu.search;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.SearchView;
 
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.astrology.R;
-import com.example.astrology.aboutteam;
-import com.example.astrology.aboutus;
-import com.example.astrology.faqs;
-import com.example.astrology.legalPolicy;
 import com.example.astrology.models.expertModel;
 import com.example.astrology.viewHollders.item;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -45,7 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+//when client logins this page will be shown to hi
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
@@ -96,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ImageSlider imageSlider = findViewById(R.id.slider);
 
         List<SlideModel> slideModels = new ArrayList<>();
-
+//for image slider
         slideModels.add(new SlideModel(R.drawable.backgroundd));
         slideModels.add(new SlideModel("https://5.imimg.com/data5/ANDROID/Default/2021/2/CL/AS/MJ/48693369/product-jpeg-500x500.jpg", "Astrology"));
         slideModels.add(new SlideModel("https://www.haribhoomi.com/cms/gall_content/2018/3/zodiac_2018032812431854.jpg", "Palmology"));

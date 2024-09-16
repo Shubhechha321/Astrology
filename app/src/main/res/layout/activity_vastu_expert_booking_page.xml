@@ -1,286 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/backgroundd"
     android:layout_height="match_parent"
-    tools:context=".vastuExpertBookingPage">
+    android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/hindiname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/open_sans_bold"
-                    android:gravity="center"
-                    android:text="AADI SHAKTII ASTRO"
-                    android:textColor="#D100D1"
-
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-
-                    android:fontFamily="@font/open_sans_bold"
-                    android:gravity="center"
-                    android:text="Welcome To Vastu Sashtra"
-                    android:textColor="#D100D1"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/title12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-
-                    android:fontFamily="@font/open_sans_bold"
-                    android:gravity="center"
-                    android:text="────────────────────────────"
-
-                    android:textColor="#D100D1"
-
-                    android:textSize="18sp"
-                    />
-
-
-
-
-
-
-            </LinearLayout>
-
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center"
+            android:background="#4DBFF0"
+            android:gravity="center"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
             <ImageView
                 android:id="@+id/topicon"
                 android:layout_width="58dp"
                 android:layout_height="60dp"
                 android:layout_alignParentLeft="true"
-                android:layout_gravity="center"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_gravity="left"
                 android:src="@drawable/mainlogo" />
 
-
-        </RelativeLayout>
-
-
-
-
-
-        <ImageView
-    android:layout_width="150dp"
-    android:layout_height="150dp"
-    android:layout_gravity="center"
-    android:src="@drawable/housevastu"></ImageView>
-
-        <TextView
-            android:id="@+id/englishname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-
-            android:fontFamily="@font/open_sans_bold"
-            android:gravity="center"
-            android:text="Please Enter Your Property Details:"
-            android:textColor="#25BEF7"
-            android:textSize="20sp"
-            />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:orientation="vertical">
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/areaofproperty"
-        android:background="@drawable/textviewbg"
-        android:padding="4dp"
-        android:paddingStart="5dp"
-        android:layout_marginBottom="8dp"
-        android:textSize="18dp"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="553dp"
-
-        android:backgroundTint="#F6F7FA"
-        android:hint="Total Area of Property(in square feet)"
-        app:layout_constraintTop_toBottomOf="@+id/veallselections"
-
-        />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/totalfloors"
-        android:hint="Total Floors"
-        android:background="@drawable/textviewbg"
-        android:padding="4dp"
-        android:paddingStart="5dp"
-        android:textSize="18dp"
-        android:layout_marginBottom="8dp"
-
-        android:backgroundTint="#F6F7FA"
-        app:layout_constraintTop_toBottomOf="@+id/areaofproperty"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="553dp"  />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/totalrooms"
-        android:background="@drawable/textviewbg"
-        android:padding="4dp"
-        android:paddingStart="5dp"
-        android:textSize="18dp"
-        android:backgroundTint="#F6F7FA"
-        android:layout_marginBottom="8dp"
-        android:hint="Total Rooms"
-        app:layout_constraintTop_toBottomOf="@+id/totalfloors"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/kitchendine"
-        android:background="@drawable/textviewbg"
-        android:padding="4dp"
-        android:paddingStart="5dp"
-        android:textSize="18dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="#F6F7FA"
-        android:hint="Total Kitchen,Dine and Dinning"
-        app:layout_constraintTop_toBottomOf="@+id/totalrooms"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/washrooms"
-        android:hint="Total Washrooms"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/textviewbg"
-        android:padding="4dp"
-        android:paddingStart="5dp"
-        android:textSize="18dp"
-        android:backgroundTint="#F6F7FA"
-        app:layout_constraintTop_toBottomOf="@+id/kitchendine"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/basement"
-        android:hint="Basement(If there is)"
-        android:background="@drawable/textviewbg"
-        android:padding="4dp"
-        android:paddingStart="5dp"
-        android:textSize="18dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="#F6F7FA"
-        app:layout_constraintTop_toBottomOf="@+id/washrooms"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/address"
-        android:hint="Address (with Pincode)"
-        android:background="@drawable/textviewbg"
-        android:padding="4dp"
-        android:paddingStart="5dp"
-        android:textSize="18dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="#F6F7FA"
-        app:layout_constraintTop_toBottomOf="@+id/basement"
-        tools:layout_editor_absoluteX="16dp" />
-
-            <EditText
-                android:id="@+id/remarks"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/textviewbg"
-                android:backgroundTint="#F6F7FA"
-                android:hint="remarks"
-                android:padding="4dp"
-                android:paddingStart="5dp"
-                android:textSize="18dp"
-                app:layout_constraintTop_toBottomOf="@+id/address"
-                tools:layout_editor_absoluteX="16dp" />
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/totalamountinvastu"
-                android:hint="Total Amount"
-                android:paddingStart="5dp"
-                android:textSize="18dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/textviewbg"
-                android:padding="4dp"
-                android:backgroundTint="#F6F7FA"
-                app:layout_constraintTop_toBottomOf="@+id/address"
-                tools:layout_editor_absoluteX="16dp" />
+                android:layout_marginBottom="5dp"
+                android:text="AADI SHAKTII ASTRO VASTU SHASTRA"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:title="AADI SHAKTII ASTRO"
+                app:titleMarginStart="10dp"
+                app:titleTextColor="@color/white" />
 
+        </androidx.appcompat.widget.Toolbar>
 
+    </com.google.android.material.appbar.AppBarLayout>
 
-            <Button
-                android:id="@+id/verequest"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="40dp"
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:paddingVertical="5dp"
+        android:src="@drawable/house_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar1" />
 
-                android:layout_marginEnd="40dp"
-                android:background="@drawable/box"
-                app:backgroundTint="#4DBFF0"
+    <TextView
+        android:id="@+id/englishname"
+        android:layout_width="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/open_sans_bold"
+        android:gravity="center"
+        android:text="Fill Your VASTU Property Details"
+        android:textColor="#DC128A"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
-                android:fontFamily="@font/open_sans_bold"
-                android:text="Book Now"
-                android:textAllCaps="false"
-                android:textSize="16dp"
+    <EditText
+        android:id="@+id/areaofproperty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textviewbg"
+        android:backgroundTint="#ebeae8"
+        android:hint="Total Area of Property(in square feet)"
+        android:padding="12dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/englishname" />
 
-                android:textStyle="bold"
+    <EditText
+        android:id="@+id/totalfloors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textviewbg"
+        android:backgroundTint="#ebeae8"
+        android:hint="Total Floors"
+        android:padding="12dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/areaofproperty" />
 
-                tools:layout_editor_absoluteX="160dp"
-                tools:layout_editor_absoluteY="553dp" />
+    <EditText
+        android:id="@+id/totalrooms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textviewbg"
+        android:backgroundTint="#ebeae8"
+        android:hint="Total Rooms"
+        android:padding="12dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalfloors" />
 
+    <EditText
+        android:id="@+id/kitchendine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textviewbg"
+        android:backgroundTint="#ebeae8"
+        android:hint="Total Kitchen, Dine and Dinning"
+        android:padding="12dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalrooms" />
 
-        </LinearLayout>
-    </LinearLayout>
+    <EditText
+        android:id="@+id/washrooms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textviewbg"
+        android:backgroundTint="#ebeae8"
+        android:hint="Total Washrooms"
+        android:padding="12dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kitchendine" />
 
-    </RelativeLayout>
-</ScrollView>
+    <EditText
+        android:id="@+id/terrace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textviewbg"
+        android:backgroundTint="#ebeae8"
+        android:hint="Terrace"
+        android:padding="12dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/washrooms" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/Exsignup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:singleLine="true"
+        android:src="@drawable/ic_rightt"
+
+        android:text="Log In"
+        android:visibility="visible"
+        app:backgroundTint="#DC128A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/terrace"
+        app:layout_constraintTop_toBottomOf="@+id/terrace"
+        app:tint="#FFFF" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

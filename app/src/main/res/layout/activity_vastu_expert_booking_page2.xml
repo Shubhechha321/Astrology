@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center"
+            android:background="#4DBFF0"
+            android:gravity="center"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <ImageView
+                android:id="@+id/topicon"
+                android:layout_width="58dp"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="left"
+                android:src="@drawable/mainlogo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="AADI SHAKTII ASTRO VASTU SHASTRA"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:title="AADI SHAKTII ASTRO"
+                app:titleMarginStart="10dp"
+                app:titleTextColor="@color/white" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:paddingVertical="5dp"
+        android:src="@drawable/house_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar1" />
+
+    <TextView
+        android:id="@+id/englishname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:gravity="center"
+        android:text="Fill Your VASTU Property Details"
+        android:textColor="#DC128A"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <TextView
+        android:id="@+id/title12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="────────────────────────────────────────────────"
+        android:textColor="#DC128A"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/englishname"
+        app:layout_constraintStart_toStartOf="@+id/englishname"
+        app:layout_constraintTop_toBottomOf="@+id/englishname"
+        tools:ignore="SmallSp" />
+
+    <EditText
+        android:id="@+id/stairs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/textviewbg"
+        android:backgroundTint="#ebeae8"
+        android:hint="Stairs"
+        android:padding="12dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title12" />
+
+    <EditText
+        android:id="@+id/basement"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textviewbg"
+        android:backgroundTint="#ebeae8"
+        android:hint="Basement (Optional)"
+        android:padding="12dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/stairs"
+        app:layout_constraintStart_toStartOf="@+id/stairs"
+        app:layout_constraintTop_toBottomOf="@+id/stairs" />
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textviewbg"
+        android:backgroundTint="#ebeae8"
+        android:hint="Address (with Pincode)"
+        android:padding="12dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/basement"
+        app:layout_constraintStart_toStartOf="@+id/basement"
+        app:layout_constraintTop_toBottomOf="@+id/basement" />
+
+    <EditText
+        android:id="@+id/naksha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textviewbg"
+        android:backgroundTint="#ebeae8"
+        android:drawableEnd="@drawable/ic_baseline_attachment_24"
+        android:drawableTint="@color/cardview_dark_background"
+        android:hint="NAKSHA of Property"
+        android:padding="12dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/address"
+        app:layout_constraintStart_toStartOf="@+id/address"
+        app:layout_constraintTop_toBottomOf="@+id/address" />
+
+    <EditText
+        android:id="@+id/remarks"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textviewbg"
+        android:backgroundTint="#ebeae8"
+        android:hint="Remarks"
+        android:padding="12dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/naksha"
+        app:layout_constraintStart_toStartOf="@+id/naksha"
+        app:layout_constraintTop_toBottomOf="@+id/naksha" />
+
+    <TextView
+        android:id="@+id/totalamountinvastu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textviewbg"
+        android:backgroundTint="#ebeae8"
+        android:hint="Total Amount"
+        android:padding="12dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/remarks"
+        app:layout_constraintStart_toStartOf="@+id/remarks"
+        app:layout_constraintTop_toBottomOf="@+id/remarks" />
+
+    <Button
+        android:id="@+id/verequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/box"
+        android:drawableEnd="@drawable/book_now"
+        android:drawableTint="@color/white"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Book Now"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="#4DBFF0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalamountinvastu" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
